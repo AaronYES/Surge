@@ -1,0 +1,8 @@
+#!name=Not Boring 解锁
+#!desc=Not Boring 解锁
+
+[Script]
+Notability = type=http-response,pattern=^https?:\/\/notability\.com\/(global|subscriptions),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/AaronYES/Surge/main/Scripts/notability.js
+
+[MITM]
+hostname = notability.com
