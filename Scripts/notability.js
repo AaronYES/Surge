@@ -1,3 +1,15 @@
+/*************************************
+
+[rewrite_local]
+^https?:\/\/notability\.com\/(global|subscriptions) url script-response-body https://raw.githubusercontent.com/AaronYES/Surge/main/Scripts/notability.js
+
+[mitm]
+hostname = notability.com
+
+*************************************/
+
+
+
 var notability = JSON.parse($response.body);
 
 notability = {
