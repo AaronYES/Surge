@@ -1,0 +1,16 @@
+#!name=彩云天气
+#!desc=解锁去广告
+
+[Script]
+# 彩云天气 //biz.cyapi.cn
+caiyun = type=http-response, pattern=^https:\/\/biz\.cyapi\.cn\/(p\/v1\/vip_info|v2\/user), requires-body=true, max-size=3145728, script-path=https://github.com/AaronYES/Surge/raw/main/Scripts/caiyun.js, timeout=60, script-update-interval=86400
+
+[Map Local]
+
+^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/caiyun.json"
+
+^https?:\/\/api\.caiyunapp\.com\/v1\/activity\? data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/reject-dict.json"
+
+[MITM]
+
+hostname = %APPEND% biz.cyapi.cn,wrapper.cyapi.cn,api.caiyunapp.com
